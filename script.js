@@ -1,13 +1,15 @@
 var synth = window.speechSynthesis;
 
-function getRandomWillPhrase(){
-	return "que bad";
+var phrases = ["que bad", "uuúhf que bad", "abstrai meu pau no seu cu", "é memo?", "eu só queria ser feliz", "moisés, tá ligado?", "hot", "to com um caibro tão tão inacreditável enfiado no rabo", "na minha opinião de merda"];
+
+function getRandomPhrase(){
+	return phrases[Math.floor(Math.random() * phrases.length)];
 }
 
 function touchWill(){
-  var utterThis = new SpeechSynthesisUtterance(getRandomWillPhrase());
-  utterThis.voice = synth.getVoices()[16]; //pt-br Google
-  utterThis.pitch = 0;
-  utterThis.rate = 0.8;
-  synth.speak(utterThis);
+  var phrase = new SpeechSynthesisUtterance(getRandomPhrase());
+  phrase.voice = synth.getVoices()[16]; //pt-br Google
+	phrase.pitch = 0;
+	phrase.rate = 0.8;
+  synth.speak(phrase);
 }
