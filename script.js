@@ -1,6 +1,6 @@
 var synth = window.speechSynthesis;
 
-var phrases = ["que bad", "uuúhf que bad", "abstrai meu pau no seu cu", "é memo?", "eu só queria ser feliz", "moisés, tá ligado?", "hot", "to com um caibro tão tão inacreditável enfiado no rabo", "na minha opinião de merda"];
+var phrases = ["que bad", "uuúhf que bad", "abstrai meu pau no seu cu", "é memo?", "eu só queria ser feliz", "moisés, tá ligado?", "hot", "tô com um caibro tão tão inacreditável enfiado no rabo", "na minha opinião de merda"];
 
 function getRandomPhrase(){
 	return phrases[Math.floor(Math.random() * phrases.length)];
