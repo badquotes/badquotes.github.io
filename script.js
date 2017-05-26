@@ -8,8 +8,17 @@ function getRandomPhrase(){
 
 function touchWill(){
   var phrase = new SpeechSynthesisUtterance(getRandomPhrase());
-  phrase.voice = synth.getVoices()[16]; //pt-br Google
+  phrase.voice = getCorrectVoice(); //pt-br Google
 	phrase.pitch = 0;
 	phrase.rate = 1;
   synth.speak(phrase);
+}
+
+function getCorrectVoice(){
+	var voices = synth.getVoices();
+	for (var i = 0; i < voices.length; i++){
+		if(voices[i].name === "Google português do Brasil"){
+			return voices[i];
+		}
+	}
 }
