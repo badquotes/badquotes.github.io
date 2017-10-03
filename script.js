@@ -1,3 +1,9 @@
+var img = document.getElementById('avatar');
+var num = Math.floor(Math.random() * 3 + 1);
+img.src = 'img/avatar/' + num + '.png';
+img.alt = img.src;
+
+
 var synth = window.speechSynthesis;
 
 var phrases = [
