@@ -1,10 +1,4 @@
-var img = document.getElementById('avatar');
-var num = Math.floor(Math.random() * 3 + 1);
-img.src = 'img/avatar/' + num + '.png';
-img.alt = img.src;
-
-
-var synth = window.speechSynthesis;
+randomAvatar()
 
 var phrases = [
 								"que bad", 
@@ -39,18 +33,13 @@ function getRandomPhrase(){
 }
 
 function touchWill(){
-  var phrase = new SpeechSynthesisUtterance(getRandomPhrase());
-  phrase.voice = getCorrectVoice(); //pt-br Google
-	phrase.pitch = 0;
-	phrase.rate = 1;
-  synth.speak(phrase);
+  randomAvatar()
+  responsiveVoice.speak(getRandomPhrase(), 'Brazilian Portuguese Female', {pitch: .7});
 }
 
-function getCorrectVoice(){
-	var voices = synth.getVoices();
-	for (var i = 0; i < voices.length; i++){
-		if(voices[i].name === "Google português do Brasil"){
-			return voices[i];
-		}
-	}
+function randomAvatar() {
+	var img = document.getElementById('avatar');
+	var num = Math.floor(Math.random() * 6 + 1);
+	img.src = 'img/avatar/' + num + '.png';
+	img.alt = img.src;
 }
