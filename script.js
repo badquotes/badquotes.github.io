@@ -33,8 +33,10 @@ function getRandomPhrase(){
 }
 
 function touchWill(){
-  randomAvatar()
-  responsiveVoice.speak(getRandomPhrase(), 'Brazilian Portuguese Female', {pitch: .7});
+	var quote = getRandomPhrase() 
+  	randomAvatar()
+	refreshQuote(quote) 
+  	responsiveVoice.speak(quote, 'Brazilian Portuguese Female', {pitch: .7});
 }
 
 function randomAvatar() {
@@ -42,4 +44,9 @@ function randomAvatar() {
 	var num = Math.floor(Math.random() * 6 + 1);
 	img.src = 'img/avatar/' + num + '.png';
 	img.alt = img.src;
+}
+
+function refreshQuote(quote){ 
+	document.getElementById('quote').innerHTML = '"' + quote + '"'; 
+	document.getElementById('quote').style.fontStyle = "italic"; 
 }
